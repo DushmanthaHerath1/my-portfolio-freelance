@@ -1,0 +1,137 @@
+{
+  "colorMode": "LIGHT",
+  "font": "PLUS_JAKARTA_SANS",
+  "roundness": "ROUND_EIGHT",
+  "customColor": "#0f766e",
+  "headlineFont": "PLUS_JAKARTA_SANS",
+  "bodyFont": "INTER",
+  "labelFont": "JETBRAINS_MONO",
+  "namedColors": {
+    "background": "#f7faf8",
+    "error": "#ba1a1a",
+    "error_container": "#ffdad6",
+    "inverse_on_surface": "#eef1f0",
+    "inverse_primary": "#80d5cb",
+    "inverse_surface": "#2d3130",
+    "on_background": "#181c1c",
+    "on_error": "#ffffff",
+    "on_error_container": "#93000a",
+    "on_primary": "#ffffff",
+    "on_primary_container": "#a3faef",
+    "on_primary_fixed": "#00201d",
+    "on_primary_fixed_variant": "#00504a",
+    "on_secondary": "#ffffff",
+    "on_secondary_container": "#fefcff",
+    "on_secondary_fixed": "#00174b",
+    "on_secondary_fixed_variant": "#003ea8",
+    "on_surface": "#181c1c",
+    "on_surface_variant": "#3e4947",
+    "on_tertiary": "#ffffff",
+    "on_tertiary_container": "#ffe5db",
+    "on_tertiary_fixed": "#370e00",
+    "on_tertiary_fixed_variant": "#72361b",
+    "outline": "#6e7977",
+    "outline_variant": "#bdc9c6",
+    "primary": "#005c55",
+    "primary_container": "#0f766e",
+    "primary_fixed": "#9cf2e8",
+    "primary_fixed_dim": "#80d5cb",
+    "secondary": "#0051d5",
+    "secondary_container": "#316bf3",
+    "secondary_fixed": "#dbe1ff",
+    "secondary_fixed_dim": "#b4c5ff",
+    "surface": "#f7faf8",
+    "surface_bright": "#f7faf8",
+    "surface_container": "#ebefed",
+    "surface_container_high": "#e5e9e7",
+    "surface_container_highest": "#e0e3e1",
+    "surface_container_low": "#f1f4f3",
+    "surface_container_lowest": "#ffffff",
+    "surface_dim": "#d7dbd9",
+    "surface_tint": "#006a63",
+    "surface_variant": "#e0e3e1",
+    "tertiary": "#7f4025",
+    "tertiary_container": "#9c573a",
+    "tertiary_fixed": "#ffdbce",
+    "tertiary_fixed_dim": "#ffb598"
+  },
+  "designMd": "---\nname: Modern Developer Portfolio\ncolors:\n  surface: '#f7faf8'\n  surface-dim: '#d7dbd9'\n  surface-bright: '#f7faf8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f1f4f3'\n  surface-container: '#ebefed'\n  surface-container-high: '#e5e9e7'\n  surface-container-highest: '#e0e3e1'\n  on-surface: '#181c1c'\n  on-surface-variant: '#3e4947'\n  inverse-surface: '#2d3130'\n  inverse-on-surface: '#eef1f0'\n  outline: '#6e7977'\n  outline-variant: '#bdc9c6'\n  surface-tint: '#006a63'\n  primary: '#005c55'\n  on-primary: '#ffffff'\n  primary-container: '#0f766e'\n  on-primary-container: '#a3faef'\n  inverse-primary: '#80d5cb'\n  secondary: '#0051d5'\n  on-secondary: '#ffffff'\n  secondary-container: '#316bf3'\n  on-secondary-container: '#fefcff'\n  tertiary: '#7f4025'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#9c573a'\n  on-tertiary-container: '#ffe5db'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#9cf2e8'\n  primary-fixed-dim: '#80d5cb'\n  on-primary-fixed: '#00201d'\n  on-primary-fixed-variant: '#00504a'\n  secondary-fixed: '#dbe1ff'\n  secondary-fixed-dim: '#b4c5ff'\n  on-secondary-fixed: '#00174b'\n  on-secondary-fixed-variant: '#003ea8'\n  tertiary-fixed: '#ffdbce'\n  tertiary-fixed-dim: '#ffb598'\n  on-tertiary-fixed: '#370e00'\n  on-tertiary-fixed-variant: '#72361b'\n  background: '#f7faf8'\n  on-background: '#181c1c'\n  surface-variant: '#e0e3e1'\ntypography:\n  headline-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 48px\n    fontWeight: '800'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  headline-xl-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '800'\n    lineHeight: '1.2'\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 30px\n    fontWeight: '700'\n    lineHeight: '1.3'\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: '1.4'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  label-mono:\n    fontFamily: JetBrains Mono\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: '1.0'\n    letterSpacing: 0.05em\n  code-block:\n    fontFamily: JetBrains Mono\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.7'\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 4px\n  container-max: 1200px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 40px\n  stack-sm: 8px\n  stack-md: 16px\n  stack-lg: 32px\n  section-gap: 80px\n---\n\n## Brand & Style\nThe design system focuses on a professional, technical, yet highly approachable aesthetic tailored for a high-end web developer portfolio. The brand personality is precise, reliable, and contemporary, aiming to evoke a sense of digital craftsmanship and clarity.\n\nThe visual style is a refined **Corporate Modernism**\u2014utilizing generous whitespace, a structured grid, and subtle depth. It avoids unnecessary flourishes, ensuring the developer's work remains the primary focus. High-quality typography and soft tactile surfaces create a \"client-friendly\" environment that signals both technical competence and sophisticated design sensibility.\n\n## Colors\nThis design system employs a sophisticated neutral palette with high-intent accents. \n\n- **Primary Accent (Teal-700):** Used for primary actions, success states, and key brand identifiers.\n- **Secondary Accent (Blue-600):** Used for interactive links, information callouts, and secondary technical highlights.\n- **Neutral Foundation:** The background utilizes a cool Slate-50 to reduce eye strain, while pure white surfaces create a clear \"layering\" effect for content cards.\n- **Typography:** Deep slate tones are used instead of pure black to maintain a softer, more modern contrast ratio that aids long-form reading.\n\n## Typography\nThe typography strategy pairs the expressive, geometric nature of **Plus Jakarta Sans** for headlines with the highly legible, systematic character of **Inter** for body copy. \n\n- **Headlines:** Use tight letter-spacing on larger sizes to create a punchy, editorial feel.\n- **Body:** Standardized on 16px for optimal readability across all devices.\n- **Technical Content:** **JetBrains Mono** is used exclusively for code snippets, tags, and small labels to reinforce the developer-centric identity of the system. It should be used sparingly for high-impact metadata.\n\n## Layout & Spacing\nThe design system utilizes a **12-column fluid grid** for desktop and a **4-column grid** for mobile. \n\n- **Rhythm:** An 8px linear scale is used to define all spacing, ensuring vertical consistency.\n- **Containers:** Content is housed within a centered max-width container of 1200px to maintain readability on ultra-wide monitors.\n- **Sectioning:** Vertical breathing room is prioritized. Large sections should be separated by 80px to 120px on desktop to allow the user's eye to rest between project showcases.\n- **Safe Areas:** On mobile, a 16px horizontal margin is mandatory for all edge-to-edge content.\n\n## Elevation & Depth\nThis design system uses **Tonal Layering** combined with **Ambient Shadows** to create a structured hierarchy. \n\n1. **Base (Slate-50):** The bottom-most canvas.\n2. **Flat Layer (Border Only):** Subtle elements like input fields or secondary containers use a 1px border (#E2E8F0) without shadows.\n3. **Surface Layer (Cards):** Raised elements like Project Cards or Skill Tiles use a white background and a very soft, diffused shadow. \n   - *Shadow spec:* `0px 4px 20px rgba(15, 23, 42, 0.05)`\n4. **Hover Layer:** Upon interaction, shadows should expand slightly and gain a small amount of \"lift\" via a subtle Y-axis shift.\n   - *Shadow spec:* `0px 10px 30px rgba(15, 23, 42, 0.08)`\n\n## Shapes\nThe shape language is \"Softly Geometric.\" A standard radius of 8px (`rounded-md` in most frameworks) is the default for buttons and cards. \n\n- **Standard (8px):** Primary containers, project cards, and buttons.\n- **Large (16px):** Featured highlight cards or modal containers.\n- **Pill:** Reserved exclusively for small labels, tags, and status indicators using **JetBrains Mono**.\n\n## Components\n- **Buttons:**\n  - *Primary:* Solid Teal-700 background, White text, 8px radius. Subtle scale-down effect on click.\n  - *Secondary:* Transparent background, Slate-200 border, Slate-900 text.\n- **Project Cards:** White background, 1px Slate-200 border, soft ambient shadow. Typography within cards should be strictly aligned to the 8px grid.\n- **Code Snippets:** Slate-900 background, JetBrains Mono font, syntax highlighting using the Teal and Blue accents.\n- **Input Fields:** 8px radius, Slate-200 border. On focus, the border transitions to Teal-700 with a 2px outer glow (ring).\n- **Tags/Chips:** Pill-shaped, light Slate-100 background with Slate-600 JetBrains Mono text. No border.\n- **Navigation:** Sticky top-bar with a backdrop-blur effect (Glassmorphism) over the Slate-50 background to maintain a sense of depth during scroll.",
+  "colorVariant": "FIDELITY",
+  "overridePrimaryColor": "#0f766e",
+  "overrideSecondaryColor": "#2563eb",
+  "spacingScale": 2,
+  "typography": {
+    "body-lg": {
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "1.6"
+    },
+    "body-md": {
+      "fontFamily": "Inter",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "1.5"
+    },
+    "body-sm": {
+      "fontFamily": "Inter",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "1.5"
+    },
+    "code-block": {
+      "fontFamily": "JetBrains Mono",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "1.7"
+    },
+    "headline-lg": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontSize": "30px",
+      "fontWeight": "700",
+      "lineHeight": "1.3",
+      "letterSpacing": "-0.01em"
+    },
+    "headline-md": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "lineHeight": "1.4"
+    },
+    "headline-xl": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontSize": "48px",
+      "fontWeight": "800",
+      "lineHeight": "1.1",
+      "letterSpacing": "-0.02em"
+    },
+    "headline-xl-mobile": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontSize": "32px",
+      "fontWeight": "800",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.02em"
+    },
+    "label-mono": {
+      "fontFamily": "JetBrains Mono",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "lineHeight": "1.0",
+      "letterSpacing": "0.05em"
+    }
+  },
+  "spacing": {
+    "base": "4px",
+    "container-max": "1200px",
+    "gutter": "24px",
+    "margin-desktop": "40px",
+    "margin-mobile": "16px",
+    "section-gap": "80px",
+    "stack-lg": "32px",
+    "stack-md": "16px",
+    "stack-sm": "8px"
+  },
+  "headlineFontFamily": "Plus Jakarta Sans",
+  "bodyFontFamily": "Inter",
+  "labelFontFamily": "Jetbrains Mono"
+}

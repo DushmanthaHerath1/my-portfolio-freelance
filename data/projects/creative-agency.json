@@ -1,0 +1,74 @@
+{
+  "id": "creative-agency",
+  "title": "Studio Verve",
+  "metaTitle": "Studio Verve Case Study | Neon",
+  "description": "A minimalist agency portfolio website featuring fluid grid layouts, dark mode aesthetics, and high-performance asset loading for showcasing creative works.",
+  "tags": ["Creative", "Agency", "2024"],
+  "heroImage": {
+    "url": "https://lh3.googleusercontent.com/aida/AP1WRLsD8Ig15G94RQAsl0uZcRo-GI-3OtxFIVLJ4m0bT4m_U1lInW8ObiZ7s6onZwxCbyf5nBvaFjhFfYOZRWrNHwP57aPoOOv1LI5Uj5gbd5jfu9ubc_0LmaAQSDynSf6Ci7i4iWUA0LlIocJ-aCsCPZSlzzurpkXap0Fz8fGWiTSlY3Yls_9j-zy4yPP_N3HP4erFL2BvpJHLMnEGMkcJdkAXPxwfeTITf59QAxrXMEzwf6dzteWf4h6rE-_a",
+    "alt": "Studio Verve Agency Portfolio Showcase"
+  },
+  "overview": [
+    "Studio Verve required a brand-new digital footprint that matched their physical standard of avant-garde design. The mandate was clear: build a portfolio website that acts as a canvas for their agency assets while minimizing site load times.",
+    "Our implementation uses lightweight vanilla JavaScript, advanced CSS variables for smooth screen-to-screen transitions, and customized media delivery pipelines. We successfully reduced the average page size by 65% while keeping animations crisp and engaging."
+  ],
+  "techStack": [
+    { "icon": "code", "label": "Vite + React" },
+    { "icon": "palette", "label": "Tailwind CSS" },
+    { "icon": "bolt", "label": "GSAP Animations" },
+    { "icon": "texture", "label": "WebGL Shader" }
+  ],
+  "implementation": {
+    "sections": [
+      {
+        "title": "Dynamic Asset Streaming",
+        "description": "We designed an intersection-observer based asset manager that streams in optimized image sets only when they approach the viewport boundary. This maintains a light initial page weight while enabling zero-latency media scrolls.",
+        "code": "// Dynamic Asset Streamer\nconst observer = new IntersectionObserver((entries) => {\n  entries.forEach(entry => {\n    if (entry.isIntersecting) {\n      const img = entry.target;\n      img.src = img.dataset.src;\n      observer.unobserve(img);\n    }\n  });\n});"
+      },
+      {
+        "title": "Fluid Page Transitions",
+        "description": "Page routing and transitions are managed through custom CSS transition hooks. By utilizing CSS opacity transitions combined with hardware-accelerated transforms, page navigation feels organic and instantaneous.",
+        "code": ""
+      }
+    ]
+  },
+  "features": [
+    {
+      "icon": "image",
+      "title": "Media Showcase",
+      "description": "High-fidelity layouts supporting full-width video grids, custom sliders, and interactive media popups."
+    },
+    {
+      "icon": "dark_mode",
+      "title": "Dark Mode Theme",
+      "description": "A sleek, high-contrast dark theme optimized for viewing vibrant artwork and creative photography portfolios."
+    },
+    {
+      "icon": "speed",
+      "title": "Performance First",
+      "description": "Scored a perfect 100 on Google Lighthouse core vitals, achieving sub-second load times for initial screen paints."
+    }
+  ],
+  "results": {
+    "description": "The new Studio Verve portal resulted in a massive surge of prospective client inbound emails and positive design accolades.",
+    "stats": [
+      { "value": "+120%", "label": "Increase in session duration" },
+      { "value": "40%", "label": "Reduction in bounce rate" },
+      { "value": "1.2s", "label": "Fully interactive load time" }
+    ]
+  },
+  "relatedProjects": [
+    {
+      "id": "focusflow-saas",
+      "title": "FocusFlow SaaS",
+      "subtitle": "Productivity Suite",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLtgOhL0SyjTQfzs5JcHE_RB6uc9AqN3CJTadYpeLdh1NHBpkcnh_slFfpvtlFi3aRArlWUfRh_1uM_B7n-vApEA7vLw7fUM4wdCwup3TaC9c9f-CUd6NMTzqtiQQPMTg-pH_bosqQt21r7-gXuXAQM-1FHZiyNuSXyDH71bRFe2FAJRGhwkOvLD9xgAPVGMMlNhFFi3Nupuo67jFqO7E0h3Q-Zthq6SJPOUEJXxUZhHSsrod6HGkgbZ-apN"
+    },
+    {
+      "id": "analytics-dashboard",
+      "title": "Analytics Dashboard",
+      "subtitle": "Data Visualization UI",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLuakNTrgoRkK7WS6zqKI2-6-v7BUIZkaqc4USt2JoAwnQyOeeWoD_y1sKamWEa63pZ027mYKGnijUAqxU5TsOmECvWxZsrb-3KWhxM8WcUFINqktV3fvCUsHSckDjAX_UTnzl_143qV4407xIJsbgFV8iBZQC7sPn2Z25R3yasWMwFTArOM7aFjU4bUnJOIwS8keuIKk2mnlVfhWi118O4NQZ7ZCI2dotHiqB5_5ynmLiBUiqb_rCG4ZX0J"
+    }
+  ]
+}

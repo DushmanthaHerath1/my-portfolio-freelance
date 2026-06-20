@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FocusFlow SaaS Case Study</title>
+<link rel="icon" type="image/png" href="images/Profile/logo.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="config/tailwind.config.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="navbar">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<!-- Brand -->
+<a class="flex flex-row items-center gap-2 font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="index.html">
+    <img src="images/Profile/logo.png" alt="Neon logo" class="w-8 h-8 object-contain" />
+    <span>Neon</span>
+</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="border-b-2 border-transparent text-on-surface-variant hover:text-primary pb-1 transition-all duration-200 font-body-md text-body-md" href="index.html#home">Home</a>
+<a class="border-b-2 border-transparent text-on-surface-variant hover:text-primary pb-1 transition-all duration-200 font-body-md text-body-md" href="index.html#services">Services</a>
+<a class="border-b-2 border-transparent text-on-surface-variant hover:text-primary pb-1 transition-all duration-200 font-body-md text-body-md" href="index.html#work">Work</a>
+<a class="border-b-2 border-transparent text-on-surface-variant hover:text-primary pb-1 transition-all duration-200 font-body-md text-body-md" href="index.html#about">About</a>
+<a class="border-b-2 border-transparent text-on-surface-variant hover:text-primary pb-1 transition-all duration-200 font-body-md text-body-md" href="index.html#contact">Contact</a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm" href="index.html#contact">
+                Hire Me
+            </a>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Open menu" class="md:hidden text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+
+<!-- Mobile Menu Drawer (Overlay + Panel) -->
+<div id="mobile-menu" class="fixed inset-0 z-50 invisible transition-all duration-300">
+    <!-- Overlay -->
+    <div id="mobile-menu-overlay" class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+    <!-- Drawer Panel -->
+    <div id="mobile-menu-panel" class="absolute top-0 right-0 w-4/5 max-w-sm h-full bg-surface dark:bg-surface-container p-6 shadow-xl translate-x-full transition-transform duration-300 flex flex-col gap-6">
+        <div class="flex justify-between items-center">
+            <a class="flex flex-row items-center gap-2 font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="index.html">
+                <img src="images/Profile/logo.png" alt="Neon logo" class="w-8 h-8 object-contain" />
+                <span>Neon</span>
+            </a>
+            <button id="close-menu" aria-label="Close menu" class="text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8">
+            <a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-lg text-body-lg border-b border-outline-variant/10" href="index.html#home">Home</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-lg text-body-lg border-b border-outline-variant/10" href="index.html#services">Services</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-lg text-body-lg border-b border-outline-variant/10" href="index.html#work">Work</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-lg text-body-lg border-b border-outline-variant/10" href="index.html#about">About</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-lg text-body-lg border-b border-outline-variant/10" href="index.html#contact">Contact</a>
+        </nav>
+        <a class="mt-auto w-full text-center px-6 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm" href="index.html#contact">
+            Hire Me
+        </a>
+    </div>
+</div>
+
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-28 md:pt-32 pb-section-gap space-y-section-gap">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center space-y-stack-lg">
+<div class="space-y-stack-md max-w-3xl">
+<h1 id="hero-title" class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface">Loading Case Study...</h1>
+<p id="hero-desc" class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Please wait while the project data is being fetched.
+                </p>
+<div id="hero-tags" class="flex justify-center gap-stack-sm pt-stack-sm">
+</div>
+</div>
+<div class="w-full relative rounded-xl overflow-hidden border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] mt-stack-lg bg-surface-container-lowest">
+<!-- Browser Chrome Mockup -->
+<div class="bg-surface-container-low border-b border-outline-variant px-4 py-3 flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-outline"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+</div>
+<img id="hero-image-img" alt="Project preview screenshot" class="w-full h-auto object-cover border-t border-outline-variant/50" src=""/>
+</div>
+</section>
+<!-- Project Overview -->
+<section id="overview-section" class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start hidden">
+<div class="md:col-span-4 md:sticky md:top-24">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Project Overview</h2>
+</div>
+<div id="overview-content" class="md:col-span-8 space-y-stack-md">
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Technical Implementation -->
+<section id="tech-implementation-section" class="space-y-stack-lg hidden">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical Implementation</h2>
+<div id="tech-stack-list" class="grid grid-cols-2 md:grid-cols-4 gap-stack-md mb-stack-lg">
+</div>
+<div id="tech-implementation-details-container" class="space-y-stack-lg">
+<div id="implementation-details-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+</div>
+</div>
+</section>
+<!-- Key Features -->
+<section id="features-section" class="space-y-stack-lg hidden">
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Key Features</h2>
+<div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+</div>
+</section>
+<!-- Results & Impact -->
+<section id="results-section" class="bg-surface-container p-stack-lg md:p-margin-desktop rounded-2xl border border-outline-variant hidden">
+<div class="max-w-3xl mx-auto text-center space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Results &amp; Impact</h2>
+<p id="results-description" class="font-body-lg text-body-lg text-on-surface-variant">
+                </p>
+<div id="results-stats-grid" class="grid grid-cols-1 md:grid-cols-3 gap-stack-md pt-stack-md">
+</div>
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Related Projects -->
+<section id="related-projects-section" class="space-y-stack-lg hidden">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">More Projects</h2>
+<div id="related-projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-highest w-full py-section-gap border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<!-- Brand Logo -->
+<a class="flex flex-row items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-95 transition-opacity" href="index.html">
+    <img src="images/Profile/logo_black.png" alt="Neon logo" class="w-6 h-6 object-contain dark:invert" />
+    <span>Neon</span>
+</a>
+<!-- Links -->
+<div class="flex gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200 font-body-sm text-body-sm" href="https://github.com/DushmanthaHerath1" target="_blank" rel="noopener noreferrer">Github</a>
+<a class="text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200 font-body-sm text-body-sm" href="https://www.linkedin.com/in/neo-dushmantha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</div>
+<!-- Copyright -->
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                © 2026 Neon. All rights reserved. Crafted with precision by Dushmantha Herath.
+            </div>
+</div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/project-loader.js"></script>
+</body></html>

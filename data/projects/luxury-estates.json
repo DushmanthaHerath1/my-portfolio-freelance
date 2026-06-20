@@ -1,0 +1,74 @@
+{
+  "id": "luxury-estates",
+  "title": "Luxury Estates App",
+  "metaTitle": "Luxury Estates App Case Study | Neon",
+  "description": "An immersive real-estate browsing application implementing interactive map overlays, dynamic search filters, and custom smooth micro-interactions.",
+  "tags": ["Mobile App", "Real Estate", "2024"],
+  "heroImage": {
+    "url": "images/projects/real_estate_app.png",
+    "alt": "Luxury Estates App Interface Mockup"
+  },
+  "overview": [
+    "Luxury Estates sought to redefine the mobile property searching experience. They wanted an interface that felt less like a directory list and more like an immersive luxury editorial magazine, combined with powerful map searches.",
+    "We created a custom gesture-driven mobile layout that relies on hardware-accelerated transforms to slide between lists, details, and high-definition photo galleries. Map clustering algorithms were optimized for lag-free exploration."
+  ],
+  "techStack": [
+    { "icon": "code", "label": "React Native" },
+    { "icon": "palette", "label": "Tailwind CSS" },
+    { "icon": "map", "label": "Mapbox API" },
+    { "icon": "bolt", "label": "Spring Physics" }
+  ],
+  "implementation": {
+    "sections": [
+      {
+        "title": "Spatial Map Clustering",
+        "description": "We customized a spatial cluster indexer to handle over 10,000 active properties. By utilizing regional spatial querying, map pins are dynamically grouped and computed instantly on user panning.",
+        "code": "// Map pin cluster calculator\nconst indexer = new Supercluster({\n  radius: 40,\n  maxZoom: 16\n});\nindexer.load(propertiesGeoJSON);\nconst clusters = indexer.getClusters(bounds, zoom);"
+      },
+      {
+        "title": "Fluid Gesture System",
+        "description": "Utilizing gesture handlers and spring physics, card expansion and swiping motions are calculated dynamically, providing organic visual feedback that matches natural touch speed.",
+        "code": ""
+      }
+    ]
+  },
+  "features": [
+    {
+      "icon": "map",
+      "title": "Map-based Search",
+      "description": "Seamless map-driven navigation with high performance custom pin styling and radius calculations."
+    },
+    {
+      "icon": "photo_library",
+      "title": "High Resolution Galleries",
+      "description": "Optimized image grids supporting immersive double-tap zoom gestures and swipe-to-dismiss galleries."
+    },
+    {
+      "icon": "tune",
+      "title": "Smart Filters",
+      "description": "Highly granular filtering parameters for price range, structural features, and geographic proximity."
+    }
+  ],
+  "results": {
+    "description": "Following the App Store release, Luxury Estates received positive reviews and an immediate increase in organic lead generation.",
+    "stats": [
+      { "value": "+85%", "label": "Increase in lead submission conversions" },
+      { "value": "4.8", "label": "App Store user rating score" },
+      { "value": "30ms", "label": "Render duration per map gesture" }
+    ]
+  },
+  "relatedProjects": [
+    {
+      "id": "focusflow-saas",
+      "title": "FocusFlow SaaS",
+      "subtitle": "Productivity Suite",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLtgOhL0SyjTQfzs5JcHE_RB6uc9AqN3CJTadYpeLdh1NHBpkcnh_slFfpvtlFi3aRArlWUfRh_1uM_B7n-vApEA7vLw7fUM4wdCwup3TaC9c9f-CUd6NMTzqtiQQPMTg-pH_bosqQt21r7-gXuXAQM-1FHZiyNuSXyDH71bRFe2FAJRGhwkOvLD9xgAPVGMMlNhFFi3Nupuo67jFqO7E0h3Q-Zthq6SJPOUEJXxUZhHSsrod6HGkgbZ-apN"
+    },
+    {
+      "id": "creative-agency",
+      "title": "Studio Verve",
+      "subtitle": "Creative Agency Portfolio",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLsD8Ig15G94RQAsl0uZcRo-GI-3OtxFIVLJ4m0bT4m_U1lInW8ObiZ7s6onZwxCbyf5nBvaFjhFfYOZRWrNHwP57aPoOOv1LI5Uj5gbd5jfu9ubc_0LmaAQSDynSf6Ci7i4iWUA0LlIocJ-aCsCPZSlzzurpkXap0Fz8fGWiTSlY3Yls_9j-zy4yPP_N3HP4erFL2BvpJHLMnEGMkcJdkAXPxwfeTITf59QAxrXMEzwf6dzteWf4h6rE-_a"
+    }
+  ]
+}

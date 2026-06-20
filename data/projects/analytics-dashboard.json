@@ -1,0 +1,74 @@
+{
+  "id": "analytics-dashboard",
+  "title": "Analytics Dashboard",
+  "metaTitle": "Analytics Dashboard Case Study | Neon",
+  "description": "A high-performance software dashboard designed for data visualization, supporting multi-tenant views, custom canvas chart elements, and dynamic query filtering.",
+  "tags": ["Software", "Dashboard", "2024"],
+  "heroImage": {
+    "url": "images/projects/software_dashboard.png",
+    "alt": "Analytics Dashboard Interface Mockup"
+  },
+  "overview": [
+    "The objective of this project was to simplify complex multi-dimensional datasets for corporate managers. The dashboard had to load instantly, query database metrics efficiently, and present reports with interactive visualizations.",
+    "We implemented custom client-side data filtering models using HTML5 Canvas drawing buffers and high-performance Web Worker threads. This guarantees the UI thread remains at 60fps, even when filtering through millions of active data points."
+  ],
+  "techStack": [
+    { "icon": "code", "label": "React.js" },
+    { "icon": "palette", "label": "Tailwind CSS" },
+    { "icon": "bar_chart", "label": "Chart.js" },
+    { "icon": "dns", "label": "Web Workers" }
+  ],
+  "implementation": {
+    "sections": [
+      {
+        "title": "Off-Thread Data Processing",
+        "description": "To keep user interactions smooth while calculating statistical aggregates, all grouping and regression operations are dispatched to a background Web Worker thread.",
+        "code": "// Dispatch calculations to background worker\nconst worker = new Worker('worker.js');\nworker.postMessage({ data: rawMetrics, query: filterParams });\nworker.onmessage = (event) => {\n  updateCharts(event.data);\n};"
+      },
+      {
+        "title": "Canvas Chart Rendering",
+        "description": "Charts are rendered directly to double-buffered HTML5 canvas nodes, avoiding DOM inflation from complex SVG shapes and reducing re-draw lag under heavy animation workloads.",
+        "code": ""
+      }
+    ]
+  },
+  "features": [
+    {
+      "icon": "bar_chart",
+      "title": "Dynamic Data Charts",
+      "description": "Highly interactive line, bar, and doughnut charts with customizable coordinate axes, hover tooltips, and image exports."
+    },
+    {
+      "icon": "admin_panel_settings",
+      "title": "Multi-Tenant Architecture",
+      "description": "Designed from the ground up to support multiple client tenants, custom user role configurations, and access levels."
+    },
+    {
+      "icon": "download",
+      "title": "Live Metric Exports",
+      "description": "Allows users to export visual representations or raw tabular data directly into PDF, CSV, or Excel formats."
+    }
+  ],
+  "results": {
+    "description": "The implementation was deployed to thousands of concurrent users, dramatically speeding up reporting workflows.",
+    "stats": [
+      { "value": "60 FPS", "label": "Smooth chart panning and zooming operations" },
+      { "value": "10x", "label": "Reduction in metric aggregation query latency" },
+      { "value": "98.5%", "label": "Report creation user satisfaction index" }
+    ]
+  },
+  "relatedProjects": [
+    {
+      "id": "focusflow-saas",
+      "title": "FocusFlow SaaS",
+      "subtitle": "Productivity Suite",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLtgOhL0SyjTQfzs5JcHE_RB6uc9AqN3CJTadYpeLdh1NHBpkcnh_slFfpvtlFi3aRArlWUfRh_1uM_B7n-vApEA7vLw7fUM4wdCwup3TaC9c9f-CUd6NMTzqtiQQPMTg-pH_bosqQt21r7-gXuXAQM-1FHZiyNuSXyDH71bRFe2FAJRGhwkOvLD9xgAPVGMMlNhFFi3Nupuo67jFqO7E0h3Q-Zthq6SJPOUEJXxUZhHSsrod6HGkgbZ-apN"
+    },
+    {
+      "id": "creative-agency",
+      "title": "Studio Verve",
+      "subtitle": "Creative Agency Portfolio",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLsD8Ig15G94RQAsl0uZcRo-GI-3OtxFIVLJ4m0bT4m_U1lInW8ObiZ7s6onZwxCbyf5nBvaFjhFfYOZRWrNHwP57aPoOOv1LI5Uj5gbd5jfu9ubc_0LmaAQSDynSf6Ci7i4iWUA0LlIocJ-aCsCPZSlzzurpkXap0Fz8fGWiTSlY3Yls_9j-zy4yPP_N3HP4erFL2BvpJHLMnEGMkcJdkAXPxwfeTITf59QAxrXMEzwf6dzteWf4h6rE-_a"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "focusflow-saas",
+  "title": "FocusFlow SaaS",
+  "metaTitle": "FocusFlow SaaS Case Study | Neon",
+  "description": "A comprehensive productivity suite designed to unlock team potential through streamlined workflow management, intuitive collaboration tools, and insightful goal tracking.",
+  "tags": ["SaaS", "Web App", "2023"],
+  "heroImage": {
+    "url": "https://lh3.googleusercontent.com/aida/AP1WRLtgOhL0SyjTQfzs5JcHE_RB6uc9AqN3CJTadYpeLdh1NHBpkcnh_slFfpvtlFi3aRArlWUfRh_1uM_B7n-vApEA7vLw7fUM4wdCwup3TaC9c9f-CUd6NMTzqtiQQPMTg-pH_bosqQt21r7-gXuXAQM-1FHZiyNuSXyDH71bRFe2FAJRGhwkOvLD9xgAPVGMMlNhFFi3Nupuo67jFqO7E0h3Q-Zthq6SJPOUEJXxUZhHSsrod6HGkgbZ-apN",
+    "alt": "FocusFlow SaaS Dashboard Interface"
+  },
+  "overview": [
+    "FocusFlow emerged from a common pain point: teams juggling multiple fragmented tools for time tracking, communication, and project management. The objective was to design a unified platform that reduced context switching and provided clear visibility into team velocity and individual focus.",
+    "Targeted at mid-sized creative and development agencies, FocusFlow integrates seamless time management with collaborative goal setting. The design prioritizes clarity and focus, utilizing a clean interface with strategic use of color to guide user attention to critical tasks and insights."
+  ],
+  "techStack": [
+    { "icon": "code", "label": "React 18" },
+    { "icon": "palette", "label": "Tailwind CSS" },
+    { "icon": "dns", "label": "Node.js" },
+    { "icon": "database", "label": "PostgreSQL" }
+  ],
+  "implementation": {
+    "sections": [
+      {
+        "title": "Real-time Data Synchronization",
+        "description": "Ensuring collaborative features like task updates and presence indicators felt instantaneous required a robust WebSocket architecture. We implemented an event-driven system to push updates to clients efficiently.",
+        "code": "// WebSocket event handler\nsocket.on('task_updated', (data) => {\n  dispatch({ \n    type: 'UPDATE_TASK', \n    payload: data \n  });\n  notifyUsers(data.assignees);\n});"
+      },
+      {
+        "title": "Responsive Dashboard Architecture",
+        "description": "Building complex data visualizations that adapt gracefully from desktop to mobile screens was a significant challenge. We utilized CSS Grid and Container Queries to create highly modular, self-adjusting chart components that maintain readability across all viewports.",
+        "code": ""
+      }
+    ]
+  },
+  "features": [
+    {
+      "icon": "schedule",
+      "title": "Time Management",
+      "description": "Frictionless time tracking with visual timeline views to understand daily capacity and identify workflow bottlenecks."
+    },
+    {
+      "icon": "groups",
+      "title": "Collaboration",
+      "description": "Integrated threaded discussions, shared workspaces, and real-time document editing to keep teams aligned."
+    },
+    {
+      "icon": "track_changes",
+      "title": "Goal Tracking",
+      "description": "Visual OKR mapping linking daily tasks to high-level organizational objectives with automated progress updates."
+    }
+  ],
+  "results": {
+    "description": "Following the initial beta launch to 5 agency partners, FocusFlow demonstrated significant improvements in operational efficiency.",
+    "stats": [
+      { "value": "32%", "label": "Reduction in internal meetings" },
+      { "value": "45%", "label": "Faster task resolution time" },
+      { "value": "9.2", "label": "Average user satisfaction score" }
+    ]
+  },
+  "relatedProjects": [
+    {
+      "id": "creative-agency",
+      "title": "Studio Verve",
+      "subtitle": "Creative Agency Portfolio",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLsD8Ig15G94RQAsl0uZcRo-GI-3OtxFIVLJ4m0bT4m_U1lInW8ObiZ7s6onZwxCbyf5nBvaFjhFfYOZRWrNHwP57aPoOOv1LI5Uj5gbd5jfu9ubc_0LmaAQSDynSf6Ci7i4iWUA0LlIocJ-aCsCPZSlzzurpkXap0Fz8fGWiTSlY3Yls_9j-zy4yPP_N3HP4erFL2BvpJHLMnEGMkcJdkAXPxwfeTITf59QAxrXMEzwf6dzteWf4h6rE-_a"
+    },
+    {
+      "id": "analytics-dashboard",
+      "title": "Analytics Dashboard",
+      "subtitle": "Data Visualization UI",
+      "image": "https://lh3.googleusercontent.com/aida/AP1WRLuakNTrgoRkK7WS6zqKI2-6-v7BUIZkaqc4USt2JoAwnQyOeeWoD_y1sKamWEa63pZ027mYKGnijUAqxU5TsOmECvWxZsrb-3KWhxM8WcUFINqktV3fvCUsHSckDjAX_UTnzl_143qV4407xIJsbgFV8iBZQC7sPn2Z25R3yasWMwFTArOM7aFjU4bUnJOIwS8keuIKk2mnlVfhWi118O4NQZ7ZCI2dotHiqB5_5ynmLiBUiqb_rCG4ZX0J"
+    }
+  ]
+}
