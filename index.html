@@ -12,6 +12,8 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Cloudflare Turnstile -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="config/tailwind.config.js"></script>
@@ -513,27 +515,36 @@
 </div>
 </div>
 <div class="w-full md:w-7/12 scroll-reveal reveal-delay-1">
-<form class="bg-surface-container-lowest p-8 rounded-xl border border-[#E2E8F0] card-shadow flex flex-col gap-stack-md">
+<form id="contactForm" class="bg-surface-container-lowest p-8 rounded-xl border border-[#E2E8F0] card-shadow flex flex-col gap-stack-md">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
 <div class="flex flex-col gap-1">
 <label class="font-label-mono text-label-mono text-on-surface-variant" for="name">Name</label>
-<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="name" placeholder="Jane Doe" type="text"/>
+<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="name" name="name" placeholder="Jane Doe" type="text" required/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-label-mono text-label-mono text-on-surface-variant" for="email">Email</label>
-<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="email" placeholder="jane@example.com" type="email"/>
+<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="email" name="email" placeholder="jane@example.com" type="email" required/>
 </div>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-label-mono text-label-mono text-on-surface-variant" for="subject">Subject (Optional)</label>
-<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="subject" placeholder="Project Inquiry" type="text"/>
+<input class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow" id="subject" name="subject" placeholder="Project Inquiry" type="text"/>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-label-mono text-label-mono text-on-surface-variant" for="message">Message</label>
-<textarea class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow resize-none" id="message" placeholder="Tell me about your project..." rows="5"></textarea>
+<textarea class="px-4 py-3 bg-surface border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-sm text-on-surface transition-shadow resize-none" id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
 </div>
-<button class="mt-2 w-full md:w-auto self-end px-8 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm" type="submit">
-                            Send Message
+
+<!-- Turnstile CAPTCHA Widget -->
+<div class="flex justify-start my-2">
+<div class="cf-turnstile" data-sitekey="0x4AAAAAADoxuFmfSl5IcxVo" data-theme="auto"></div>
+</div>
+
+<!-- Feedback Message Banner -->
+<div id="contact-feedback" class="hidden p-4 rounded-lg font-body-sm text-body-sm border transition-all duration-300"></div>
+
+<button id="contactSubmitBtn" class="mt-2 w-full md:w-auto self-end px-8 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm flex items-center justify-center gap-2" type="submit">
+                            <span>Send Message</span>
                         </button>
 </form>
 </div>
