@@ -16,10 +16,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ success: false, message: 'CAPTCHA verification token is missing.' });
     }
 
-    const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
-    const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY;
+    // Load and defensively clean environment variables of any quotes or trailing spaces
+    const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY?.trim().replace(/^["']|["']$/g, '');
+    const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim().replace(/^["']|["']$/g, '');
 
-    if (!TURNSTILE_SECRET || !WEB3FORMS_KEY) {
+    if (!TURNSTILE_SECRET || !RESEND_API_KEY) {
       console.error('Server configuration error: Missing environment variables.');
       return res.status(500).json({ success: false, message: 'Server configuration error. Please try again later.' });
     }
@@ -39,31 +40,39 @@ export default async function handler(req, res) {
       return res.status(400).json({ success: false, message: 'CAPTCHA verification failed. Please try again.' });
     }
 
-    // 3. Send Email via Web3Forms
-    const web3Response = await fetch('https://api.web3forms.com/submit', {
+    // 3. Send Email via Resend API (Native fetch to avoid npm dependency)
+    const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        name: name,
-        email: email,
+        from: 'Portfolio Contact <onboarding@resend.dev>',
+        to: 'hmt.dushmantha@gmail.com',
+        reply_to: email,
         subject: subject || 'New Portfolio Contact Form Submission',
-        message: message,
-        from_name: name
+        html: `
+          <h3>New message from your portfolio</h3>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `
       })
     });
 
-    const data = await web3Response.json();
-    if (web3Response.ok && data.success) {
+    const data = await resendResponse.json();
+
+    if (resendResponse.ok) {
       return res.status(200).json({ success: true, message: 'Message sent successfully!' });
     } else {
-      return res.status(400).json({ success: false, message: data.message || 'Failed to send message via email handler.' });
+      console.error('Resend API Error Response:', data);
+      return res.status(400).json({ success: false, message: data.message || 'Failed to send email via Resend.' });
     }
   } catch (error) {
-    console.error('Contact form submission error:', error);
+    console.error('Backend contact handler error:', error);
     return res.status(500).json({ success: false, message: 'Internal Server Error. Please try again later.' });
   }
 }
