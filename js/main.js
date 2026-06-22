@@ -201,4 +201,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // 6. Copy Email to Clipboard (Obfuscated Email Logic)
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyEmailText = document.getElementById('copy-email-text');
+    if (copyEmailBtn && copyEmailText) {
+        copyEmailBtn.addEventListener('click', () => {
+            const obfuscatedEmail = copyEmailBtn.getAttribute('data-email');
+            if (obfuscatedEmail) {
+                try {
+                    const email = atob(obfuscatedEmail);
+                    navigator.clipboard.writeText(email).then(() => {
+                        const originalText = copyEmailText.textContent;
+                        copyEmailText.textContent = 'Email Copied!';
+                        copyEmailBtn.classList.remove('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary');
+                        copyEmailBtn.classList.add('bg-primary', 'text-on-primary');
+                        
+                        setTimeout(() => {
+                            copyEmailText.textContent = originalText;
+                            copyEmailBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary');
+                            copyEmailBtn.classList.remove('bg-primary', 'text-on-primary');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy email:', err);
+                    });
+                } catch (e) {
+                    console.error('Failed to decode email:', e);
+                }
+            }
+        });
+    }
 });
