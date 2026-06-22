@@ -5,7 +5,7 @@
   "description": "A comprehensive productivity suite designed to unlock team potential through streamlined workflow management, intuitive collaboration tools, and insightful goal tracking.",
   "tags": ["SaaS", "Web App", "2023"],
   "heroImage": {
-    "url": "https://lh3.googleusercontent.com/aida/AP1WRLtgOhL0SyjTQfzs5JcHE_RB6uc9AqN3CJTadYpeLdh1NHBpkcnh_slFfpvtlFi3aRArlWUfRh_1uM_B7n-vApEA7vLw7fUM4wdCwup3TaC9c9f-CUd6NMTzqtiQQPMTg-pH_bosqQt21r7-gXuXAQM-1FHZiyNuSXyDH71bRFe2FAJRGhwkOvLD9xgAPVGMMlNhFFi3Nupuo67jFqO7E0h3Q-Zthq6SJPOUEJXxUZhHSsrod6HGkgbZ-apN",
+    "url": "images/projects/saas_landing_page.png",
     "alt": "FocusFlow SaaS Dashboard Interface"
   },
   "overview": [
@@ -62,13 +62,13 @@
       "id": "creative-agency",
       "title": "Studio Verve",
       "subtitle": "Creative Agency Portfolio",
-      "image": "https://lh3.googleusercontent.com/aida/AP1WRLsD8Ig15G94RQAsl0uZcRo-GI-3OtxFIVLJ4m0bT4m_U1lInW8ObiZ7s6onZwxCbyf5nBvaFjhFfYOZRWrNHwP57aPoOOv1LI5Uj5gbd5jfu9ubc_0LmaAQSDynSf6Ci7i4iWUA0LlIocJ-aCsCPZSlzzurpkXap0Fz8fGWiTSlY3Yls_9j-zy4yPP_N3HP4erFL2BvpJHLMnEGMkcJdkAXPxwfeTITf59QAxrXMEzwf6dzteWf4h6rE-_a"
+      "image": "images/projects/creative_agency_portfolio.png"
     },
     {
       "id": "analytics-dashboard",
       "title": "Analytics Dashboard",
       "subtitle": "Data Visualization UI",
-      "image": "https://lh3.googleusercontent.com/aida/AP1WRLuakNTrgoRkK7WS6zqKI2-6-v7BUIZkaqc4USt2JoAwnQyOeeWoD_y1sKamWEa63pZ027mYKGnijUAqxU5TsOmECvWxZsrb-3KWhxM8WcUFINqktV3fvCUsHSckDjAX_UTnzl_143qV4407xIJsbgFV8iBZQC7sPn2Z25R3yasWMwFTArOM7aFjU4bUnJOIwS8keuIKk2mnlVfhWi118O4NQZ7ZCI2dotHiqB5_5ynmLiBUiqb_rCG4ZX0J"
+      "image": "images/projects/software_dashboard.png"
     }
   ]
 }
