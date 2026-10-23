@@ -1,0 +1,67 @@
+{
+  "id": "cv-engine",
+  "title": "CV Engine - CV Crafting Application",
+  "metaTitle": "CV Engine Case Study | Dushmantha Herath",
+  "githubUrl": "https://github.com/DushmanthaHerath1/CV-Creator.git",
+  "description": "A privacy-first, client-side resume builder deployed commercially within a CV-writing business, generating over LKR 50,000 in revenue.",
+  "tags": ["React 19", "Tailwind CSS", "React PDF", "Zod", "@dnd-kit"],
+  "heroImage": {
+    "url": "data/my_projects/cv_engine/cv_engine_screen_1.png",
+    "alt": "CV Engine Resume Builder Application Interface"
+  },
+  "screenshots": [
+    {
+      "url": "data/my_projects/cv_engine/cv_engine_screen_1.png",
+      "title": "Interactive Resume Builder",
+      "caption": "Live preview editor with client-side ATS layout generation and instant styling"
+    },
+    {
+      "url": "data/my_projects/cv_engine/cv_engine_screen_2.png",
+      "title": "Drag-and-Drop Reordering",
+      "caption": "Modular section organization powered by @dnd-kit with real-time Zod validation"
+    },
+    {
+      "url": "data/my_projects/cv_engine/cv_engine_screen_3.png",
+      "title": "Template Registry & PDF Export",
+      "caption": "Extensible 5-template engine with high-fidelity client-side React PDF export"
+    }
+  ],
+  "techStack": [
+    { "icon": "web", "label": "React 19" },
+    { "icon": "palette", "label": "Tailwind CSS" },
+    { "icon": "picture_as_pdf", "label": "React PDF" },
+    { "icon": "fact_check", "label": "Zod" },
+    { "icon": "drag_indicator", "label": "@dnd-kit" }
+  ],
+  "features": [
+    {
+      "icon": "description",
+      "title": "ATS-Optimized Registry Architecture",
+      "description": "Client-side ATS-optimized resume generation using an extensible five-template registry architecture supporting real-time PDF generation."
+    },
+    {
+      "icon": "reorder",
+      "title": "Interactive DnD with Zod Validation",
+      "description": "Interactive section reordering using @dnd-kit combined with Zod schema validation to guarantee structured, error-free documents."
+    },
+    {
+      "icon": "payments",
+      "title": "Commercial Production Proven",
+      "description": "Commercial deployment driving over LKR 50,000 in revenue through iterative, feedback-driven updates in an active CV-writing business."
+    }
+  ],
+  "relatedProjects": [
+    {
+      "id": "ai-support-agent",
+      "title": "AI Support & Refund Agent",
+      "subtitle": "Human-in-the-Loop Customer Support Pipeline",
+      "image": "data/my_projects/AI_support_assistent/support_assitent_screen_1.png"
+    },
+    {
+      "id": "crumb-and-crust",
+      "title": "Crumb & Crust",
+      "subtitle": "Bakery E-Commerce & Kitchen Operations",
+      "image": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_1.png"
+    }
+  ]
+}

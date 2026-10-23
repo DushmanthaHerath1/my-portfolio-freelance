@@ -1,0 +1,67 @@
+{
+  "id": "ai-support-agent",
+  "title": "AI Support & Refund Agent with Human-in-the-Loop",
+  "metaTitle": "AI Support & Refund Agent Case Study | Dushmantha Herath",
+  "githubUrl": "https://github.com/DushmanthaHerath1/support-ticket-agent",
+  "description": "A deterministic customer support pipeline designed to eliminate LLM hallucinations through context preloading and enforce supervisor oversight on refund actions.",
+  "tags": ["AI Agent", "FastAPI", "React 19", "PostgreSQL", "LangGraph"],
+  "heroImage": {
+    "url": "data/my_projects/AI_support_assistent/support_assitent_screen_1.png",
+    "alt": "AI Support & Refund Agent Dashboard Interface"
+  },
+  "screenshots": [
+    {
+      "url": "data/my_projects/AI_support_assistent/support_assitent_screen_1.png",
+      "title": "Chat & Ticket Overview",
+      "caption": "Real-time conversation interface with streaming tool-call status and customer context"
+    },
+    {
+      "url": "data/my_projects/AI_support_assistent/support_assitent_screen_2.png",
+      "title": "Supervisor Audit Panel",
+      "caption": "Human-in-the-loop review interface for refund operation authorization"
+    },
+    {
+      "url": "data/my_projects/AI_support_assistent/support_assitent_screen_3.png",
+      "title": "Resolution Analytics",
+      "caption": "Ticket classification, resolution metrics, and LangGraph checkpoint traces"
+    }
+  ],
+  "techStack": [
+    { "icon": "account_tree", "label": "LangGraph" },
+    { "icon": "bolt", "label": "FastAPI" },
+    { "icon": "code", "label": "Python" },
+    { "icon": "database", "label": "PostgreSQL" },
+    { "icon": "web", "label": "React 19" }
+  ],
+  "features": [
+    {
+      "icon": "smart_toy",
+      "title": "Dual-Model Architecture",
+      "description": "Utilizes Groq for high-throughput ReAct tool-calling and Gemini for customer-facing responses, ticket classification, and resolution audits."
+    },
+    {
+      "icon": "verified_user",
+      "title": "Human-in-the-Loop Safeguards",
+      "description": "LangGraph PostgreSQL checkpoints with interrupt triggers to mandate human supervisor review on refund operations before execution."
+    },
+    {
+      "icon": "sync_alt",
+      "title": "Real-Time SSE Streaming",
+      "description": "Real-time asynchronous delivery of token streams and live tool-call execution states to a React 19 interface via FastAPI Server-Sent Events (SSE)."
+    }
+  ],
+  "relatedProjects": [
+    {
+      "id": "crumb-and-crust",
+      "title": "Crumb & Crust",
+      "subtitle": "Bakery E-Commerce & Kitchen Operations",
+      "image": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_1.png"
+    },
+    {
+      "id": "cv-engine",
+      "title": "CV Engine",
+      "subtitle": "Commercial ATS Resume Builder",
+      "image": "data/my_projects/cv_engine/cv_engine_screen_1.png"
+    }
+  ]
+}

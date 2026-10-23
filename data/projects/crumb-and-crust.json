@@ -1,0 +1,72 @@
+{
+  "id": "crumb-and-crust",
+  "title": "Crumb & Crust - Bakery E-Commerce & Operations Management",
+  "metaTitle": "Crumb & Crust Case Study | Dushmantha Herath",
+  "githubUrl": "https://github.com/DushmanthaHerath1/Crumb-and-Crust",
+  "description": "A full-stack ordering platform and kitchen operations management system built to prevent production overbooking and ensure payment idempotency.",
+  "tags": ["E-Commerce", "FastAPI", "React 19", "PostgreSQL", "PayPal API"],
+  "heroImage": {
+    "url": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_1.png",
+    "alt": "Crumb & Crust Storefront and Order Interface"
+  },
+  "screenshots": [
+    {
+      "url": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_1.png",
+      "title": "Storefront & Catalog",
+      "caption": "Artisanal bakery ordering interface with dynamic lead time controls"
+    },
+    {
+      "url": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_2.png",
+      "title": "Checkout & Schedule Engine",
+      "caption": "Capacity-aware checkout calendar enforcing blackout dates and daily order limits"
+    },
+    {
+      "url": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_3.png",
+      "title": "Kitchen Operations Portal",
+      "caption": "Fulfillment dashboard with real-time inventory toggling and order statuses"
+    },
+    {
+      "url": "data/my_projects/crumb_and_crust/crumb_and_crust_screen_4.png",
+      "title": "Order Management & Idempotency",
+      "caption": "Idempotent payment tracking with PayPal Orders v2 and transaction audit logs"
+    }
+  ],
+  "techStack": [
+    { "icon": "bolt", "label": "FastAPI" },
+    { "icon": "web", "label": "React 19" },
+    { "icon": "database", "label": "PostgreSQL" },
+    { "icon": "layers", "label": "Zustand" },
+    { "icon": "payments", "label": "PayPal API" }
+  ],
+  "features": [
+    {
+      "icon": "event_available",
+      "title": "Automated Capacity Scheduling",
+      "description": "Scheduling engine enforcing production lead times, blackout dates, checkout-hold expirations, and daily capacity limits to prevent overbooking."
+    },
+    {
+      "icon": "lock",
+      "title": "Idempotent Payment Engine",
+      "description": "PayPal Orders v2 integration with server-side capture verification and UUID idempotency keys to eliminate race conditions and duplicate transactions."
+    },
+    {
+      "icon": "kitchen",
+      "title": "Secured Kitchen Operations Portal",
+      "description": "Role-secured portal with OAuth2/JWT supporting date-based order filtering, real-time inventory toggling, and multi-stage fulfillment tracking."
+    }
+  ],
+  "relatedProjects": [
+    {
+      "id": "ai-support-agent",
+      "title": "AI Support & Refund Agent",
+      "subtitle": "Human-in-the-Loop Customer Support Pipeline",
+      "image": "data/my_projects/AI_support_assistent/support_assitent_screen_1.png"
+    },
+    {
+      "id": "cv-engine",
+      "title": "CV Engine",
+      "subtitle": "Commercial ATS Resume Builder",
+      "image": "data/my_projects/cv_engine/cv_engine_screen_1.png"
+    }
+  ]
+}

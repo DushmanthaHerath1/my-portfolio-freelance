@@ -68,67 +68,98 @@
 </div>
 
 <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-28 md:pt-32 pb-section-gap space-y-section-gap">
+<!-- Breadcrumb / Back Link -->
+<div class="flex items-center justify-between">
+    <a href="index.html#work" class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm group">
+        <span class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1">arrow_back</span>
+        Back to Selected Work
+    </a>
+</div>
+
 <!-- Hero Section -->
-<section class="flex flex-col items-center text-center space-y-stack-lg">
-<div class="space-y-stack-md max-w-3xl">
-<h1 id="hero-title" class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface">Loading Case Study...</h1>
-<p id="hero-desc" class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    Please wait while the project data is being fetched.
-                </p>
-<div id="hero-tags" class="flex justify-center gap-stack-sm pt-stack-sm">
-</div>
-</div>
-<div class="w-full relative rounded-xl overflow-hidden border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] mt-stack-lg bg-surface-container-lowest">
-<!-- Browser Chrome Mockup -->
-<div class="bg-surface-container-low border-b border-outline-variant px-4 py-3 flex items-center gap-2">
-<div class="w-3 h-3 rounded-full bg-error"></div>
-<div class="w-3 h-3 rounded-full bg-outline"></div>
-<div class="w-3 h-3 rounded-full bg-primary-container"></div>
-</div>
-<img id="hero-image-img" alt="Project preview screenshot" class="w-full h-auto object-cover border-t border-outline-variant/50" src=""/>
-</div>
+<section class="flex flex-col items-center text-center space-y-stack-md">
+    <div class="space-y-stack-md max-w-3xl">
+        <div id="hero-tags" class="flex flex-wrap justify-center gap-2"></div>
+        <h1 id="hero-title" class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface">Loading Case Study...</h1>
+        <p id="hero-desc" class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Please wait while the project data is being fetched.
+        </p>
+        <!-- Hero Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a id="hero-github-link" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-2 px-5 py-2.5 bg-inverse-surface text-surface rounded-lg font-body-md text-body-md hover:bg-black active:scale-95 transition-all shadow-sm">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+                <span>View on GitHub</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Screenshot Showcase Mockup -->
+    <div class="w-full mt-stack-md space-y-stack-sm">
+        <div class="w-full relative rounded-xl overflow-hidden border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] bg-surface-container-lowest">
+            <!-- Browser Chrome Mockup Bar -->
+            <div class="bg-surface-container-low border-b border-outline-variant px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-error"></div>
+                    <div class="w-3 h-3 rounded-full bg-outline"></div>
+                    <div class="w-3 h-3 rounded-full bg-primary-container"></div>
+                </div>
+                <span id="active-screenshot-title" class="font-label-mono text-xs text-on-surface-variant truncate max-w-xs md:max-w-md">Live Preview</span>
+                <div class="w-12"></div>
+            </div>
+            <!-- Main Active Screenshot -->
+            <div class="w-full bg-[#0F172A]/5 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
+                <img id="hero-image-img" alt="Project preview screenshot" class="w-full h-auto max-h-[640px] object-contain transition-opacity duration-200" src=""/>
+            </div>
+            <!-- Caption Bar -->
+            <div id="active-screenshot-caption" class="px-6 py-3 bg-surface-container-low border-t border-outline-variant text-center font-body-sm text-body-sm text-on-surface-variant">
+            </div>
+        </div>
+
+        <!-- Thumbnails Navigation Strip -->
+        <div id="screenshot-thumbnails" class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        </div>
+    </div>
 </section>
-<!-- Project Overview -->
-<section id="overview-section" class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start hidden">
-<div class="md:col-span-4 md:sticky md:top-24">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Project Overview</h2>
-</div>
-<div id="overview-content" class="md:col-span-8 space-y-stack-md">
-</div>
+
+<!-- Technologies & Tools -->
+<section id="tech-implementation-section" class="space-y-stack-md hidden">
+    <div class="text-center md:text-left">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Technologies &amp; Tools</h2>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Core architectural and runtime technologies leveraged for this project.</p>
+    </div>
+    <div id="tech-stack-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-stack-md">
+    </div>
 </section>
-<hr class="border-outline-variant"/>
-<!-- Technical Implementation -->
-<section id="tech-implementation-section" class="space-y-stack-lg hidden">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical Implementation</h2>
-<div id="tech-stack-list" class="grid grid-cols-2 md:grid-cols-4 gap-stack-md mb-stack-lg">
-</div>
-<div id="tech-implementation-details-container" class="space-y-stack-lg">
-<div id="implementation-details-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-</div>
-</div>
-</section>
+
 <!-- Key Features -->
-<section id="features-section" class="space-y-stack-lg hidden">
-<h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Key Features</h2>
-<div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-</div>
+<section id="features-section" class="space-y-stack-md hidden">
+    <div class="text-center">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Key Technical Features</h2>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xl mx-auto">Core capabilities, fault tolerance, and system mechanics implemented in this solution.</p>
+    </div>
+    <div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-2">
+    </div>
 </section>
-<!-- Results & Impact -->
-<section id="results-section" class="bg-surface-container p-stack-lg md:p-margin-desktop rounded-2xl border border-outline-variant hidden">
-<div class="max-w-3xl mx-auto text-center space-y-stack-md">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Results &amp; Impact</h2>
-<p id="results-description" class="font-body-lg text-body-lg text-on-surface-variant">
-                </p>
-<div id="results-stats-grid" class="grid grid-cols-1 md:grid-cols-3 gap-stack-md pt-stack-md">
-</div>
-</div>
-</section>
+
 <hr class="border-outline-variant"/>
+
 <!-- Related Projects -->
-<section id="related-projects-section" class="space-y-stack-lg hidden">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">More Projects</h2>
-<div id="related-projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-</div>
+<section id="related-projects-section" class="space-y-stack-md hidden">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-2">
+        <div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">More Projects</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Explore other applications and engineered systems.</p>
+        </div>
+        <a href="index.html#work" class="inline-flex items-center gap-1 text-primary hover:underline font-body-sm text-body-sm font-medium">
+            View All Projects
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+    </div>
+    <div id="related-projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter pt-2">
+    </div>
 </section>
 </main>
 <!-- Footer -->

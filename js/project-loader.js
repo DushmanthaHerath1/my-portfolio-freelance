@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.metaTitle) {
             document.title = data.metaTitle;
         } else if (data.title) {
-            document.title = `${data.title} Case Study | Neon`;
+            document.title = `${data.title} Case Study | Dushmantha Herath`;
         }
 
         // Hero Title & Description
@@ -54,180 +54,127 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Hero Image
-        const heroImage = document.getElementById('hero-image-img');
-        if (heroImage && data.heroImage) {
-            heroImage.src = data.heroImage.url || '';
-            heroImage.alt = data.heroImage.alt || data.title || 'Project image';
-        }
-
-        // Overview
-        const overviewSection = document.getElementById('overview-section');
-        const overviewContent = document.getElementById('overview-content');
-        if (overviewContent) {
-            overviewContent.innerHTML = '';
-            if (data.overview && data.overview.length > 0) {
-                if (overviewSection) overviewSection.classList.remove('hidden');
-                data.overview.forEach(paragraph => {
-                    const p = document.createElement('p');
-                    p.className = "font-body-md text-body-md text-on-surface-variant";
-                    p.textContent = paragraph;
-                    overviewContent.appendChild(p);
-                });
+        // Hero GitHub Link
+        const heroGithubLink = document.getElementById('hero-github-link');
+        if (heroGithubLink) {
+            if (data.githubUrl) {
+                heroGithubLink.href = data.githubUrl;
+                heroGithubLink.classList.remove('hidden');
             } else {
-                if (overviewSection) overviewSection.classList.add('hidden');
+                heroGithubLink.classList.add('hidden');
             }
         }
 
-        // Technical Implementation Section
+        // Screenshots Showcase
+        const heroImage = document.getElementById('hero-image-img');
+        const screenshotTitle = document.getElementById('active-screenshot-title');
+        const screenshotCaption = document.getElementById('active-screenshot-caption');
+        const thumbnailsContainer = document.getElementById('screenshot-thumbnails');
+
+        const screenshots = (data.screenshots && data.screenshots.length > 0)
+            ? data.screenshots
+            : (data.heroImage ? [{ url: data.heroImage.url, title: data.title, caption: data.heroImage.alt }] : []);
+
+        if (heroImage && screenshots.length > 0) {
+            const setActiveScreenshot = (index) => {
+                const item = screenshots[index];
+                if (!item) return;
+
+                heroImage.classList.add('opacity-40');
+                setTimeout(() => {
+                    heroImage.src = item.url;
+                    heroImage.alt = item.title || item.caption || data.title;
+                    if (screenshotTitle) screenshotTitle.textContent = item.title || `Screenshot ${index + 1}`;
+                    if (screenshotCaption) screenshotCaption.textContent = item.caption || '';
+                    heroImage.classList.remove('opacity-40');
+                }, 150);
+
+                if (thumbnailsContainer) {
+                    const thumbButtons = thumbnailsContainer.querySelectorAll('button');
+                    thumbButtons.forEach((btn, idx) => {
+                        if (idx === index) {
+                            btn.className = "group relative w-20 h-14 md:w-28 md:h-18 rounded-lg overflow-hidden border-2 border-primary shadow-sm transition-all scale-105";
+                        } else {
+                            btn.className = "group relative w-20 h-14 md:w-28 md:h-18 rounded-lg overflow-hidden border border-outline-variant hover:border-outline opacity-70 hover:opacity-100 transition-all";
+                        }
+                    });
+                }
+            };
+
+            // Render thumbnails
+            if (thumbnailsContainer) {
+                thumbnailsContainer.innerHTML = '';
+                if (screenshots.length > 1) {
+                    screenshots.forEach((shot, idx) => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.setAttribute('aria-label', `View ${shot.title || 'screenshot ' + (idx + 1)}`);
+                        btn.className = idx === 0
+                            ? "group relative w-20 h-14 md:w-28 md:h-18 rounded-lg overflow-hidden border-2 border-primary shadow-sm transition-all scale-105"
+                            : "group relative w-20 h-14 md:w-28 md:h-18 rounded-lg overflow-hidden border border-outline-variant hover:border-outline opacity-70 hover:opacity-100 transition-all";
+
+                        btn.innerHTML = `
+                            <img src="${shot.url}" alt="${shot.title || ''}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                        `;
+                        btn.addEventListener('click', () => setActiveScreenshot(idx));
+                        thumbnailsContainer.appendChild(btn);
+                    });
+                }
+            }
+
+            // Set initial image
+            heroImage.src = screenshots[0].url;
+            heroImage.alt = screenshots[0].title || screenshots[0].caption || data.title;
+            if (screenshotTitle) screenshotTitle.textContent = screenshots[0].title || 'Live Preview';
+            if (screenshotCaption) screenshotCaption.textContent = screenshots[0].caption || '';
+        }
+
+        // Technologies & Tools
         const techImplSection = document.getElementById('tech-implementation-section');
         const techStackList = document.getElementById('tech-stack-list');
-        const techDetailsContainer = document.getElementById('tech-implementation-details-container');
-        const techDetailsGrid = document.getElementById('implementation-details-grid');
-
-        let showTechSection = false;
-
-        // Tech stack items
-        if (techStackList) {
+        if (techStackList && data.techStack && data.techStack.length > 0) {
+            if (techImplSection) techImplSection.classList.remove('hidden');
             techStackList.innerHTML = '';
-            if (data.techStack && data.techStack.length > 0) {
-                showTechSection = true;
-                techStackList.classList.remove('hidden');
-                data.techStack.forEach(tech => {
-                    const div = document.createElement('div');
-                    div.className = "p-stack-md bg-surface-container-lowest border border-outline-variant rounded-lg flex items-center gap-stack-sm";
-                    div.innerHTML = `
-                        <span class="material-symbols-outlined text-primary-container text-2xl">${tech.icon || 'settings'}</span>
-                        <span class="font-label-mono text-label-mono text-on-surface">${tech.label}</span>
-                    `;
-                    techStackList.appendChild(div);
-                });
-            } else {
-                techStackList.classList.add('hidden');
-            }
+            data.techStack.forEach(tech => {
+                const div = document.createElement('div');
+                div.className = "p-stack-md bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center gap-stack-sm shadow-sm hover:border-primary/40 hover:-translate-y-0.5 transition-all";
+                div.innerHTML = `
+                    <div class="w-9 h-9 rounded-lg bg-primary-container/10 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-primary-container text-xl">${tech.icon || 'settings'}</span>
+                    </div>
+                    <span class="font-label-mono text-label-mono text-on-surface font-semibold truncate">${tech.label}</span>
+                `;
+                techStackList.appendChild(div);
+            });
+        } else if (techImplSection) {
+            techImplSection.classList.add('hidden');
         }
 
-        // Dynamic Columns/Details
-        if (techDetailsGrid) {
-            techDetailsGrid.innerHTML = '';
-            if (data.implementation && data.implementation.sections && data.implementation.sections.length > 0) {
-                showTechSection = true;
-                if (techDetailsContainer) techDetailsContainer.classList.remove('hidden');
-
-                const totalSections = data.implementation.sections.length;
-                data.implementation.sections.forEach(section => {
-                    const card = document.createElement('div');
-                    // If only one section exists, span full width
-                    const colSpanClass = totalSections === 1 ? 'col-span-1 md:col-span-2' : '';
-                    card.className = `bg-surface-container-low p-stack-lg rounded-xl border border-outline-variant ${colSpanClass}`;
-
-                    let codeBlockHtml = '';
-                    if (section.code && section.code.trim() !== '') {
-                        // Safe HTML escaping
-                        const escapedCode = section.code
-                            .replace(/&/g, '&amp;')
-                            .replace(/</g, '&lt;')
-                            .replace(/>/g, '&gt;');
-                        codeBlockHtml = `
-                            <div class="bg-inverse-surface rounded-lg p-stack-sm overflow-hidden border border-outline/20 mt-stack-md">
-                                <pre class="font-code-block text-code-block text-surface-container-low overflow-x-auto"><code>${escapedCode}</code></pre>
-                            </div>
-                        `;
-                    }
-
-                    const paragraphMargin = (section.code && section.code.trim() !== '') ? 'mb-stack-md' : '';
-
-                    card.innerHTML = `
-                        <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">${section.title || 'Feature implementation'}</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant ${paragraphMargin}">
-                            ${section.description || ''}
-                        </p>
-                        ${codeBlockHtml}
-                    `;
-                    techDetailsGrid.appendChild(card);
-                });
-            } else {
-                if (techDetailsContainer) techDetailsContainer.classList.add('hidden');
-            }
-        }
-
-        if (techImplSection) {
-            if (showTechSection) {
-                techImplSection.classList.remove('hidden');
-            } else {
-                techImplSection.classList.add('hidden');
-            }
-        }
-
-        // Features Grid
+        // Key Features
         const featuresSection = document.getElementById('features-section');
         const featuresGrid = document.getElementById('features-grid');
-        if (featuresGrid) {
+        if (featuresGrid && data.features && data.features.length > 0) {
+            if (featuresSection) featuresSection.classList.remove('hidden');
             featuresGrid.innerHTML = '';
-            if (data.features && data.features.length > 0) {
-                if (featuresSection) featuresSection.classList.remove('hidden');
-                
-                // Adjust layout columns based on counts
-                const totalFeatures = data.features.length;
-                const colsClass = totalFeatures === 2 ? 'md:grid-cols-2' : (totalFeatures === 1 ? 'md:grid-cols-1 max-w-xl mx-auto' : 'md:grid-cols-3');
-                featuresGrid.className = `grid grid-cols-1 ${colsClass} gap-gutter`;
-
-                data.features.forEach(feature => {
-                    const card = document.createElement('div');
-                    card.className = "bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:-translate-y-1 hover:shadow-[0px_10px_30px_rgba(15,23,42,0.08)] transition-all duration-300 flex flex-col items-center text-center group";
-                    card.innerHTML = `
-                        <div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mb-stack-md group-hover:bg-primary-container/20 transition-colors">
-                            <span class="material-symbols-outlined text-primary-container text-3xl">${feature.icon || 'star'}</span>
-                        </div>
-                        <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">${feature.title || ''}</h3>
-                        <p class="font-body-sm text-body-sm text-on-surface-variant">
-                            ${feature.description || ''}
-                        </p>
-                    `;
-                    featuresGrid.appendChild(card);
-                });
-            } else {
-                if (featuresSection) featuresSection.classList.add('hidden');
-            }
+            data.features.forEach(feature => {
+                const card = document.createElement('div');
+                card.className = "bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:-translate-y-1 hover:shadow-[0px_10px_30px_rgba(15,23,42,0.08)] transition-all duration-300 flex flex-col group";
+                card.innerHTML = `
+                    <div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-stack-md group-hover:bg-primary-container/20 group-hover:scale-110 transition-all text-primary-container">
+                        <span class="material-symbols-outlined text-2xl">${feature.icon || 'star'}</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">${feature.title || ''}</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        ${feature.description || ''}
+                    </p>
+                `;
+                featuresGrid.appendChild(card);
+            });
+        } else if (featuresSection) {
+            featuresSection.classList.add('hidden');
         }
 
-        // Results Section
-        const resultsSection = document.getElementById('results-section');
-        const resultsDescription = document.getElementById('results-description');
-        const resultsStatsGrid = document.getElementById('results-stats-grid');
-        if (resultsSection) {
-            if (data.results) {
-                resultsSection.classList.remove('hidden');
-                if (resultsDescription) resultsDescription.textContent = data.results.description || '';
-                
-                if (resultsStatsGrid) {
-                    resultsStatsGrid.innerHTML = '';
-                    if (data.results.stats && data.results.stats.length > 0) {
-                        resultsStatsGrid.classList.remove('hidden');
-                        
-                        const totalStats = data.results.stats.length;
-                        const statsCols = totalStats === 2 ? 'md:grid-cols-2' : (totalStats === 1 ? 'md:grid-cols-1 max-w-sm mx-auto' : 'md:grid-cols-3');
-                        resultsStatsGrid.className = `grid grid-cols-1 ${statsCols} gap-stack-md pt-stack-md`;
-
-                        data.results.stats.forEach(stat => {
-                            const statCard = document.createElement('div');
-                            statCard.className = "bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant";
-                            statCard.innerHTML = `
-                                <div class="font-headline-xl text-headline-xl text-primary mb-1">${stat.value}</div>
-                                <div class="font-body-sm text-body-sm text-on-surface-variant font-medium">${stat.label || ''}</div>
-                            `;
-                            resultsStatsGrid.appendChild(statCard);
-                        });
-                    } else {
-                        resultsStatsGrid.classList.add('hidden');
-                    }
-                }
-            } else {
-                resultsSection.classList.add('hidden');
-            }
-        }
-
-        // Related Projects
+        // More Projects
         const relatedSection = document.getElementById('related-projects-section');
         const relatedGrid = document.getElementById('related-projects-grid');
         if (relatedGrid) {
@@ -237,18 +184,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.relatedProjects.forEach(project => {
                     const card = document.createElement('a');
                     card.href = `project.html?id=${project.id}`;
-                    card.className = "group block overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0px_10px_30px_rgba(15,23,42,0.08)] transition-all duration-300";
+                    card.className = "group block overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0px_10px_30px_rgba(15,23,42,0.08)] hover:-translate-y-1 transition-all duration-300";
                     card.innerHTML = `
-                        <div class="h-64 overflow-hidden relative">
+                        <div class="h-56 md:h-64 overflow-hidden relative bg-[#0F172A]/5 flex items-center justify-center">
                             <img alt="${project.title} screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${project.image}"/>
                             <div class="absolute inset-0 bg-inverse-surface/10 group-hover:bg-transparent transition-colors"></div>
                         </div>
                         <div class="p-stack-md flex justify-between items-center">
                             <div>
                                 <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">${project.title}</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant">${project.subtitle || ''}</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">${project.subtitle || ''}</p>
                             </div>
-                            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors group-hover:translate-x-1 duration-300">arrow_forward</span>
+                            <div class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0">
+                                <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+                            </div>
                         </div>
                     `;
                     relatedGrid.appendChild(card);
@@ -272,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${message || 'We could not find the case study you are looking for. It might have been moved or deleted.'}
                         </p>
                     </div>
-                    <a class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm mt-4" href="index.html">
+                    <a class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-body-md text-body-md rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm mt-4" href="index.html#work">
                         <span class="material-symbols-outlined">arrow_back</span>
-                        Back to Homepage
+                        Back to Selected Work
                     </a>
                 </section>
             `;
